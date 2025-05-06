@@ -1,4 +1,5 @@
 ---
+permalink: example-pages/simple
 layout: post # try to remoce this line (add # in the beginning of the line to make it a comment) - then the layout will change, but the content remain the same
 title: Simple page
 description: This page is using a simple predefined layout with an image, a title and some body text

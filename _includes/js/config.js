@@ -1,37 +1,179 @@
-var siteTheme = gbifReactComponents.themeBuilder.extend({baseTheme: 'light', extendWith: {
-  primary: themeStyle.colors.primary
-}});
+var siteTheme = gbifReactComponents.themeBuilder.extend({
+  baseTheme: 'light', extendWith: {
+      primary: themeStyle.colors.primary
+  }
+});
 
-var siteTheme = gbifReactComponents.themeBuilder.extend({baseTheme: 'light', extendWith: {
-  primary: themeStyle.colors.primary,
-  fontSize: '16px'
-}});
+var publisherKeys = [
+  '760d5f24-4c04-40da-9646-1b2c935da502',
+  '2e7df380-8356-4533-bcb3-5459e23c794e',
+  '8e1a97a0-3ca8-11d9-8439-b8a03c50a862',
+];
+
+var institutionKeys = [
+  '68fcaba0-61fe-4e78-a460-4f37654d025d',
+  '59f46093-8fae-47f3-a9ef-e5fd1d38e4fe',
+  '44e7a331-0270-4c39-ad64-91c0d8416480',
+];
 
 var siteConfig = {
-  routes: {
-    occurrenceSearch: {
-      // The route you are currently using for occurrence search. The language prefix will be added automatically
-      // If you need special routes per language, then you have to add locale specific overwrites. The page language is available as a global variable called `pageLang`
-      // route: '/data'
-    }
+  "version": 3,
+  "pages": [
+      {
+          "id": "occurrenceSearch"
+      },
+      {
+          "id": "collectionSearch"
+      },
+      {
+          "id": "collectionKey"
+      },
+      {
+          "id": "datasetSearch"
+      },
+      {
+          "id": "datasetKey"
+      },
+      {
+          "id": "institutionKey"
+      },
+      {
+          "id": "literatureSearch"
+      }
+  ],
+  "disableInlineTableFilterButtons": false,
+  "availableCatalogues": [
+      "OCCURRENCE",
+      "DATASET",
+      "COLLECTION",
+      "LITERATURE"
+  ],
+  "dataHeader": {
+      "enableApiPopup": false,
+      "enableInfoPopup": false
   },
-  occurrence: {
-    mapSettings: {
-      lat: 60,
-      lng: -100,
-      zoom: 4.9115440763665068
-    },
-    // You probably need help to configure the scope - so just ask
-    // for his demo site we only show Fungi (taxonKey=5). It use the predicate structure known from GBIF download API. 
-    // See https://www.gbif.org/developer/occurrence (long page without enough anchors - search for "Occurrence Download Predicates")
-    // The format is however slightly different, in that is use camelCase for keys instead of CONSTANT_CASE. 
-    rootPredicate: { type: 'equals', key: 'taxonKey', value: 5 }, 
-    // occurrenceSearchTabs: ['MAP', 'TABLE', 'GALLERY', 'DATASETS'] // what tabs should be shown
-    // see https://hp-theme.gbif-staging.org/data-exploration-config for more options
+  "theme": {
+      "primary": "#001972",
+      "borderRadius": 3,
+      "stickyOffset": "0px"
+  },
+  "maps": {
+      "mapStyles": {
+          "defaultProjection": "MERCATOR",
+          "defaultMapStyle": "BRIGHT",
+          "options": {
+              "MERCATOR": [
+                  "BRIGHT",
+                  "NATURAL"
+              ]
+          }
+      }
+  },
+  "languages": [
+      {
+          "code": "en",
+          "localeCode": "en",
+          "label": "English",
+          "default": true,
+          "textDirection": "ltr",
+          "iso3LetterCode": "eng",
+          "cmsLocale": "en-GB",
+          "gbifOrgLocalePrefix": "",
+          "mapTileLocale": "en"
+      },
+      {
+          "code": "da",
+          "localeCode": "da",
+          "label": "Dansk",
+          "default": false,
+          "textDirection": "ltr",
+          "iso3LetterCode": "dan",
+          "cmsLocale": "en-GB",
+          "gbifOrgLocalePrefix": "",
+          "mapTileLocale": "en"
+      }
+  ],
+  "messages": {},
+  "occurrenceSearch": {
+      "scope": {
+          "type": "in",
+          "key": "publishingOrg",
+          "values": [
+              "760d5f24-4c04-40da-9646-1b2c935da502",
+              "2e7df380-8356-4533-bcb3-5459e23c794e",
+              "8e1a97a0-3ca8-11d9-8439-b8a03c50a862"
+          ]
+      },
+      "highlightedFilters": [
+          "taxonKey",
+          "verbatimScientificName",
+          "institutionKey",
+          "collectionKey",
+          "catalogNumber",
+          "recordedBy",
+          "identifiedBy"
+      ],
+      "excludedFilters": [
+          "occurrenceStatus",
+          "networkKey",
+          "hostingOrganizationKey",
+          "protocol",
+          "publishingCountry",
+          "institutionCode",
+          "collectionCode"
+      ],
+      "defaultEnabledTableColumns": [
+          "features",
+          "institutionKey",
+          "collectionKey",
+          "catalogNumber",
+          "country",
+          "year",
+          "recordedBy",
+          "identifiedBy"
+      ],
+      "tabs": [
+          "table",
+          "gallery",
+          "map",
+          "clusters",
+          "dashboard",
+          "download"
+      ],
+      "mapSettings": {
+          "lat": 52,
+          "lng": 12,
+          "zoom": 4.911544076366507
+      }
+  },
+  "collectionSearch": {
+      excludedFilters: ['country', 'active'],
+      // highlightedFilters: ['q', 'type', 'publishingOrg', 'license'],
+      // defaultTableColumns: ['title', 'description', 'publisher', 'type', 'occurrenceCount', 'literatureCount'],
+      scope: {
+          institutionKey: institutionKeys,
+          active: true
+      },
+  },
+  "institutionSearch": {},
+  "datasetSearch": {
+      excludedFilters: ['publishingCountry', 'networkKey', 'projectId', 'hostingOrg'],
+      highlightedFilters: ['q', 'type', 'publishingOrg', 'license'],
+      // defaultTableColumns: ['title', 'description', 'publisher', 'type', 'occurrenceCount', 'literatureCount'],
+      scope: {
+          publishingOrg: publisherKeys
+      },
+  },
+  "publisherSearch": {},
+  "literatureSearch": {
+      "scope": {
+          "type": "in",
+          "key": "publishingOrganizationKey",
+          "values": [
+              "760d5f24-4c04-40da-9646-1b2c935da502",
+              "2e7df380-8356-4533-bcb3-5459e23c794e",
+              "8e1a97a0-3ca8-11d9-8439-b8a03c50a862"
+          ]
+      }
   }
-};
-
-// example of a language specific route overwrite
-// if (pageLang === 'da')  {
-//   siteConfig.routes.occurrenceSearch.route = '/observationer/sog';
-// }
+}

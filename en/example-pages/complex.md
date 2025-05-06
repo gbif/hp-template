@@ -1,4 +1,5 @@
 ---
+permalink: example-pages/complex
 layout: compose # this is a layout that allows you to stich together various predefined blocks that comes with the the,e
 title: Complex page
 description: This layout requires a bit more fiddling as it is stiching together various blocks that all can be customized.

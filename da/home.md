@@ -1,17 +1,17 @@
 ---
 lang-ref: home
 layout: home
-title: Template headline
-description: Lesser saw seas own have can’t kind Also to every own yielding there stars one itself lights seed yielding dominion lesser from lesser were divide be their spirit one behold a they’re grass called open.
-background:  "{{ site.data.images.acalypha_gillespieae.src }}"
-imageLicense: "{{ site.data.images.acalypha_gillespieae.caption }}"
+title: Danish System of Scientific Collections
+description: Part of the European Project DiSSCo
+background:  "{{ site.data.images.shells_with_barcode.src }}"
+imageLicense: "{{ site.data.images.shells_with_barcode.caption }}"
 height: 90vh
 cta:
-  - text: Institutions
-    href: /institution/search
-    isPrimary: true
   - text: Specimens
-    href: /specimen/search
+    href: /occurrence/search
+    isPrimary: true
+  - text: Datasets
+    href: /dataset/search
   - text: About
     href: /about
 composition:
@@ -22,7 +22,7 @@ composition:
     data: examples.herbariumImageExample
   - type: features
     data: examples.couldBeAnyName
-permalink: /
+permalink: /da
 ---
 
 Edit `/home.md` to change the text.
