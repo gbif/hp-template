@@ -3,8 +3,8 @@ lang-ref: home
 layout: home
 title: Template_site
 description: Lorem markdownum spatium limes indefessus neque *at* orat aestuat
-background:  "{{ site.data.images.irpex.src }}"
-imageLicense: "{{ site.data.images.irpex.caption }}"
+background:  "{{ site.data.images.acalypha_gillespieae.src }}"
+imageLicense: "{{ site.data.images.acalypha_gillespieae.caption }}"
 height: 90vh
 cta:
   - text: Specimens
