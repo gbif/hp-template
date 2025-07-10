@@ -1,8 +1,8 @@
 ---
 lang-ref: archive
 layout: archive
-title: News
-description: News and events
+title: News # TODO: you can change this to the local language
+description: News and events # TODO: you can change this to the local language
 permalink: /da/news/
 ---
 {% comment %}

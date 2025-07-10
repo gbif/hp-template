@@ -27,8 +27,18 @@ description: >- # this means to ignore newlines (until baseurl:)
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://template_site.hp.gbif.org/" # the base hostname & protocol for your site, e.g. http://example.com
+
+# SOCIAL PROFILES that will show in the footer
+email: info@gbif.org                                      # Social icon in footer
 twitter_username: yourname # if you have an account you want to link to. Else comment this line out
 github_username:  yourname # if you have an account you want to link to. Else comment this line out
+bluesky_username: yourname.org                            # Social icon in footer
+youtube_username: yourname                              # Social icon in footer
+facebook_username: yourname                             # Social icon in footer
+flickr_username: yourname                               # Social icon in footer
+instagram_username: yourname                              # Social icon in footer
+mastodon_url: https://something.goes/@here                # Social icon in footer
+linkedin_url: https://www.linkedin.com/company/yourname # Social icon in footer
 
 # Build settings
 theme: minima
@@ -81,6 +91,7 @@ exclude:
   - .LICENSE
   - .netlify.toml
   - .README.md
+  - serve.json
 
 permalink: pretty # will strip extensions like .html from urls
 
@@ -95,6 +106,7 @@ defaults:
     values:
       layout: "post"
       permalink: "/post/:year/:slug/"   # Use /post/yyyy/{filename}/ as permalink for all posts
+  
   - scope:
       path: "es/" # For anything in the "es" folder the default is to set the lang frontMatter property to "es" . this should be deleted or adapted to your site if you support other languages
     values:
@@ -183,3 +195,14 @@ defaults:
       layout: "post"
       permalink: "/it/post/:year/:slug/"
       lang: it
+
+  - scope:
+      path: "da/"
+    values:
+      lang: da
+  - scope:
+      path: "_posts/da"
+    values:
+      layout: "post"
+      permalink: "/da/post/:year/:slug/"
+      lang: da

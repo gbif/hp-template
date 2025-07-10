@@ -1,5 +1,6 @@
+# This file contains examples of blocks that can be insterted using the themes specific layouts and front matter.
 stats:
-  klass: contentTypesStat
+  klass: contentTypesStat # here we add a custom class to the block, so that we can style it differently. see the sass file _sass/_example.scss
   # title: "type: stats"
   # description: |      # required
   #  See [`_data/compose/examples.yml`](https://github.com/gbif/jekyll-theme-algae/blob/master/_data/compose/examples.yml#L72) for the content structure.

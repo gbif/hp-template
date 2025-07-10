@@ -1,4 +1,5 @@
 {
+  "comment": "This file isn't relevant. It is only used to test things locally for developers.",
   "rewrites": [
     {
       "source": "/institution/*-*",

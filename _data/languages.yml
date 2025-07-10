@@ -1,8 +1,10 @@
 # The translations on this page is machine generated and need a review
-# reviewed languages: es (add others as they are reviewed)
 en:
   label: English
   archive_permalink: /post/
+da:
+  label: Dansk
+  archive_permalink: /da/post/
 es:
   label: Español
   archive_permalink: /es/post/

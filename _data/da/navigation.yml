@@ -1,14 +1,14 @@
 # Links listed below will be included in your site's navbar (navigation at the top)
 
-- text: About lang2
+- text: Om os
   href: /da/about
 - text: Data
   menu: 
-  - text: Occurrence lang2
+  - text: Observationer
     href: /da/occurrence/search
-  - text: Datasets lang2
+  - text: Datasæts
     href: /da/dataset/search
-  - text: Collections lang2
+  - text: Samlinger
     href: /da/collection/search
-  - text: Literature lang2
+  - text: Literatur
     href: /da/literature/search

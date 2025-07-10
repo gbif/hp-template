@@ -6,7 +6,7 @@
 #   href: /occurrence/search
 - text: Data
   menu: 
-  - text: Specimens
+  - text: Occurrences
     href: /occurrence/search
   - text: Datasets
     href: /dataset/search
