@@ -92,6 +92,7 @@ exclude:
   - .netlify.toml
   - .README.md
   - serve.json
+  - en/data/disabled/
 
 permalink: pretty # will strip extensions like .html from urls
 

@@ -1,7 +1,7 @@
 ---
-permalink: dataset/_key_
-lang-ref: dataset/key
-title: Dataset details
+title: Dataset
 description: We publish open data
-layout: datasetKey
+permalink: /dataset/_key_
+layout: dataset-key
+lang-ref: datasetKey
 ---
