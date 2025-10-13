@@ -90,9 +90,11 @@ exclude:
   - vendor/ruby/
   - .LICENSE
   - .netlify.toml
-  - .README.md
   - serve.json
   - en/data/disabled/
+  - .README.md
+  - .GUIDE.md
+  - ./**/README.md  # exclude all README.md files in any folder
 
 permalink: pretty # will strip extensions like .html from urls
 

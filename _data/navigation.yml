@@ -1,9 +1,9 @@
+# Navigation configuration
+# You should create one of these files for each language you support. E.g. /_data/es/navigation.yml for the spanish version of the menu
 # Links listed below will be included in your site's navbar (navigation at the top)
 
 - text: About
   href: /about
-# - text: Occurrences
-#   href: /occurrence/search
 - text: Data
   menu: 
   - text: Occurrences
