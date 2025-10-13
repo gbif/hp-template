@@ -105,19 +105,10 @@ This repository has **no automated tests, linters, or validation scripts**. Vali
 - Structure must mirror across languages for translation linking
 
 **`en/data/` and `da/data/` subdirectories** - GBIF data widget pages:
-- `occurrences.md` - Occurrence search page (layout: occurrence)
-- `occurrenceKey.md` - Single occurrence detail (layout: occurrence-key, permalink must include `/_key_`)
-- `datasets.md` - Dataset search (layout: dataset)
-- `datasetKey.md` - Dataset detail (layout: dataset-key)
-- `collection.md` - Collection search (layout: collection-search)
-- `collectionKey.md` - Collection detail (layout: collection-key)
-- `institution.md` - Institution search (layout: institution-search)
-- `institutionKey.md` - Institution detail (layout: institution-key)
-- `literature.md` - Literature search (layout: literature)
-- `publisher.md` - Publisher search (layout: publisher)
-- `publisherKey.md` - Publisher detail (layout: publisher-key)
-
-**IMPORTANT for "key" pages:** Permalinks must use `/_key_` placeholder (e.g., `/occurrence/_key_`). The server replaces `_key_` with the actual ID/GUID at runtime.
+- Search pages: `occurrences.md`, `datasets.md`, `collection.md`, `institution.md`, `literature.md`, `publisher.md`
+- Detail pages: `occurrenceKey.md`, `datasetKey.md`, `collectionKey.md`, `institutionKey.md`, `publisherKey.md`
+- Use corresponding layouts: `occurrence`, `dataset`, `collection-search`, `institution-search`, `publisher`, plus `-key` variants
+- **CRITICAL:** Detail page permalinks must use `/_key_` placeholder (e.g., `/occurrence/_key_`). Server replaces with actual ID at runtime.
 
 ## Predefined Layouts (from Remote Theme)
 
@@ -201,48 +192,36 @@ cta:                                 # Call-to-action buttons
 
 ### Multilingual Configuration
 
-1. **`_config.yml`** - Set `rootLang: en` under `algae:`
-2. **`_data/languages.yml`** - Define available languages
-3. Create language folders: `en/`, `da/`, `es/`, etc.
-4. Create `_data/LANG/navigation.yml` and `footer.yml` for each language
-5. Use `lang-ref: unique-id` in frontmatter to link translations
-6. Set `lang: LANG` in frontmatter (auto-set via _config.yml defaults)
+1. Set `rootLang: en` in `_config.yml` under `algae:`
+2. Define languages in `_data/languages.yml`
+3. Create folders: `en/`, `da/`, `es/`, etc. and `_data/LANG/navigation.yml`, `footer.yml`
+4. Link translations: use same `lang-ref: unique-id` in frontmatter across versions
+5. Language auto-set via _config.yml defaults based on folder
 
 ## Typical Workflows
 
 ### Adding a New Page
-
-1. Create markdown file in appropriate language folder (e.g., `en/new-page.md`)
-2. Add frontmatter with layout, title, description, permalink
-3. Write content in markdown
-4. Add navigation link in `_data/navigation.yml` or `_data/LANG/navigation.yml`
-5. Build to verify: `bundle exec jekyll build`
+1. Create markdown file in language folder (e.g., `en/new-page.md`) with frontmatter (layout, title, description, permalink)
+2. Write content in markdown
+3. Add to `_data/navigation.yml` or language-specific version
+4. Build to verify: `bundle exec jekyll build`
 
 ### Creating a Multilingual Page
-
-1. Create page in `en/page.md` with `lang-ref: page-id`
-2. Create translated version in `da/page.md` with same `lang-ref: page-id`
-3. Add navigation links in both `_data/navigation.yml` and `_data/da/navigation.yml`
+1. Create in `en/page.md` and `da/page.md` with same `lang-ref: page-id`
+2. Add to both `_data/navigation.yml` and `_data/da/navigation.yml`
 
 ### Customizing a Data Widget Page
-
-1. Edit the relevant page in `en/data/` (e.g., `occurrences.md`)
-2. Modify `_includes/js/config.js` to adjust widget behavior
-3. Update scope, filters, or highlighted fields as needed
+1. Edit page in `en/data/` (e.g., `occurrences.md`)
+2. Modify `_includes/js/config.js` for scope, filters, or highlighted fields
 
 ### Adding a Custom Compose Block
-
-1. Create HTML template in `_includes/blocks/myBlock.html`
-2. Use Liquid template variables: `{{ include.content.title }}`
-3. Reference in page frontmatter: `composition: [{ type: myBlock, data: examples.myData }]`
-4. Define data in `_data/examples.yml` or inline with `inlineData:`
+1. Create template in `_includes/blocks/myBlock.html` using `{{ include.content.title }}`
+2. Use in frontmatter: `composition: [{ type: myBlock, data: examples.myData }]`
 
 ### Modifying Site Styles
-
 1. Edit `_sass/_main.scss` or create new SCSS file
 2. Import in `_sass/_main.scss`: `@import "my-styles";`
-3. Use Bulma or Tailwind classes where possible
-4. Rebuild to see changes
+3. Prefer Bulma/Tailwind classes where possible
 
 ## Common Issues and Workarounds
 
