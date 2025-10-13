@@ -3,26 +3,15 @@ lang-ref: home
 layout: home
 title: Template_site
 description: Lorem markdownum spatium limes indefessus neque *at* orat aestuat
-background: /assets/images/placeholders/acalypha_gillespieae_1258001892.jpg
-imageLicense: |
-  [Holotype of _Acalypha gillespieae_ G.A.Levin & I.Montero, 2020](https://www.gbif.org/occurrence/1258001892) from [Missouri Botanical Garden](/institution/1be3aa67-8f90-4309-92f4-bd55426a8c09)
-height: 90vh
+background: /assets/images/placeholders/templates/w1600h800.png
+imageLicense: None for this image
+height: 70vh
 cta:
   - text: Occurrences
     href: /occurrence/search
     isPrimary: true
   - text: Datasets
     href: /dataset/search
-  - text: About
-    href: /about
-composition:
-  - type: heroImage # the block type
-  - type: stats
-    data: examples.stats
-  - type: split
-    data: examples.herbariumImageExample
-  - type: features
-    data: examples.couldBeAnyName
 permalink: /
 ---
 
