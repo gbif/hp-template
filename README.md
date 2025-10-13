@@ -15,6 +15,15 @@ This is a Jekyll site using the remote theme gbif/jekyll-hp-base-theme
 The theme comes with a site navigation and footer and multilingual support.
 There are a set of predefined layouts: `heroImage, page, post, text, documentation, compose`
 
+## Configuring the site navigation
+The theme comes with a sit navbar that can be configured in `_data/navigation`. If you have a multilingual site you should provide one per language following the convention `_data/[locale]/navigation.yml`
+
+## Configuring the footer
+The theme comes with a sit navbar that can be configured in `_data/footer`. If you have a multilingual site you should provide one per language following the convention `_data/[locale]/footer.yml`
+
+## Multilingual sites
+if you have a multilingual site it is recommended that you add a folder in root for each langauge but the default language. Similar in the _posts folder. And in the _data folder. This will make it easier to navigate.
+
 ## Layouts
 
 ### General parameters for layouts
@@ -151,3 +160,21 @@ config:
 That structure allow us to do many compositions using the same blocks in various ways. But sometimes the existing blocks does not suffice for your vision. In this case you could create a completely new layout, but decomposing it into reusable blocks that can be used along side the existing blocks is often a better solution.
 
 Place your custom reusable blocks for the `compose` layout in `_includes_/blocks/yourBlockName.html`
+
+### Data layouts
+The theme is optimized for exploring subsets of data from gbif.org. For that we have some special layouts that will show that data following the configuration from `_includes/js/config.js`. Those layouts are
+* collection-key
+* collection-search
+* institution-key
+* institution-search
+* dataset-key
+* dataset (which is search despite the name)
+* literature (search despite the name)
+* occurrence-key
+* occurrence (again it is for search)
+* publisher-key
+* publisher (for search)
+* literature (for search)
+
+for those pages it is important to follow the convention that "key" type pages have the permalink /collection/_key_
+the reason for that is that _key_ will be replaces on the server to support whatever guid or identifier is provided in the url to load the correct data.
