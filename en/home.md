@@ -9,7 +9,7 @@ height: 70vh
 cta:
   - text: Occurrences
     href: /occurrence/search
-    isPrimary: true
+isPrimary: true # this will break as it is illegal yaml
   - text: Datasets
     href: /dataset/search
 permalink: /
