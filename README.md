@@ -16,13 +16,13 @@ The theme comes with a site navigation and footer and multilingual support.
 There are a set of predefined layouts: `heroImage, page, post, text, documentation, compose`
 
 ## Configuring the site navigation
-The theme comes with a sit navbar that can be configured in `_data/navigation`. If you have a multilingual site you should provide one per language following the convention `_data/[locale]/navigation.yml`
+The theme comes with a sit navbar that can be configured in [`_data/navigation`](./_data/navigation.yml). If you have a multilingual site you should provide one per language following the convention `_data/[locale]/navigation.yml`
 
 ## Configuring the footer
-The theme comes with a sit navbar that can be configured in `_data/footer`. If you have a multilingual site you should provide one per language following the convention `_data/[locale]/footer.yml`
+The theme comes with a sit navbar that can be configured in [`_data/footer`](./_data/footer.yml). If you have a multilingual site you should provide one per language following the convention `_data/[locale]/footer.yml`
 
 ## Multilingual sites
-if you have a multilingual site it is recommended that you add a folder in root for each langauge but the default language. Similar in the _posts folder. And in the _data folder. This will make it easier to navigate.
+if you have a multilingual site it is recommended that you add a folder in root for each langauge but the default language. Similar in the [_posts](./_posts) folder. And in the _data folder. This will make it easier to navigate.
 
 ## Layouts
 
