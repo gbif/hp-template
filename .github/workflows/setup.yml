@@ -11,18 +11,19 @@ on:
         required: false
         type: string
 
+permissions:
+  contents: write
+  
 jobs:
   setup:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
           
       - name: Search and replace
         run: |
-          find . -type f \( -name "*.yml" -o -name "*.js" -o -name "*.md" -o -name "*.html" \) -exec sed -i 's/template_site/${{ inputs.siteName }}/g' {} +
+          find . -path ./.github -prune -o -type f \( -name "*.yml" -o -name "*.js" -o -name "*.md" -o -name "*.html" \) -exec sed -i 's/template_site/${{ inputs.siteName }}/g' {} +
           
       - name: Commit changes
         run: |
