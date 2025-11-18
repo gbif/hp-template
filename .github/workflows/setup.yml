@@ -32,6 +32,17 @@ jobs:
           git add .
           git commit -m "Replace template placeholders" || echo "No changes to commit"
           git push
+      - name: Add informatics team
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.teams.addOrUpdateRepoPermissionsInOrg({
+              org: 'gbif',
+              team_slug: 'informatics',
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              permission: 'admin'
+            });
       - name: Add collaborator
         if: ${{ inputs.collaborator != '' }}
         uses: actions/github-script@v7
