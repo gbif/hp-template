@@ -1,3 +1,5 @@
+const COL = '7ddf754f-d193-4cc9-b351-99906754a03b'; // Catalogue of Life Taxonomy
+
 /*
 This is the fil in which you configure the data widgets. Feel free to experiment with the configuration options. 
 But it is also completely okay to write and issue and ask for help to configure the widgets.
@@ -5,6 +7,7 @@ You probably want to check out the documentation at https://hp-theme.gbif-stagin
 */
 var siteConfig = {
   "version": 3,
+  "defaultChecklistKey": COL,
   "pages": [ // which pages do we want to enable
     {
       "id": "occurrenceSearch"
