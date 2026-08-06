@@ -8,6 +8,7 @@ You probably want to check out the documentation at https://hp-theme.gbif-stagin
 var siteConfig = {
   "version": 3,
   "defaultChecklistKey": COL,
+  "availableChecklistKeys": [COL],
   "pages": [ // which pages do we want to enable
     {
       "id": "occurrenceSearch"
